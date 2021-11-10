@@ -1,38 +1,42 @@
-version: '3'
-
+version: '3.8'
 services:
+  # NGINX REVERSE PROXY
   nginx-proxy:
     image: jwilder/nginx-proxy
     restart: always
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80" # Expone el puerto 80 al host, y el puerto 8080 al contenedor
+      - "443:443" # Expone el puerto 443 al host, y el puerto 443 al contenedor
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - certs:/etc/nginx/certs:ro
-      - vhostd:/etc/nginx/vhost.d
-      - html:/usr/share/nginx/html
+      - ./certs:/etc/nginx/certs:ro
+      - ./vhostd:/etc/nginx/vhost.d
+      - ./html:/var/www/html/
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
 
+  # Let's Encrypt SSL Certificate
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
     restart: always
     environment:
       - NGINX_PROXY_CONTAINER=nginx-proxy
     volumes:
-      - certs:/etc/nginx/certs:rw
-      - vhostd:/etc/nginx/vhost.d
-      - html:/usr/share/nginx/html
+      - ./certs:/etc/nginx/certs:r
+      - ./vhostd:/etc/nginx/vhost.d
+      - ./html:/var/www/html/
       - /var/run/docker.sock:/var/run/docker.sock:ro
-
-  www:
-    image: nginx
+      
+  # Apache2 with PHP 
+  php-apache-environment:
+    image: php:7-apache
     restart: always
     expose:
-      - "80"
+      - "80" # Expone el puerto 80 al contenedor
     volumes:
-      - html:/usr/share/nginx/html
+      - ./php/www:/var/www/html/ # Directorio webroot
+      - ./php/conf:/etc/php/7.0/apache2/conf.d/ # Directorio de configuración de Apache
+      - ./php/logs:/var/log/apache2/ # Directorio de logs de Apache
     environment:
       - VIRTUAL_HOST=gtadictos21.com,www.gtadictos21.com
       - LETSENCRYPT_HOST=gtadictos21.com,www.gtadictos21.com
@@ -42,5 +46,4 @@ services:
       - letsencrypt
 volumes: 
   certs:
-  html:
   vhostd:
