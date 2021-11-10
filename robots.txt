@@ -4,15 +4,8 @@
 # Never gonna run around and desert you...
 
 User-agent: *
-Disallow: /assets/*
-Disallow: /404.shtml
-Disallow: /400.shtml
-Disallow: /401.shtml
-Disallow: /403.shtml
-Disallow: /404.shtml
-Disallow: /500.shtml
-Disallow: /robots.txt
-Disallow: /cgi-bin/*
+Disallow: /styles/*
+Disallow: /images/*
 
 User-agent: *
 Allow: /
