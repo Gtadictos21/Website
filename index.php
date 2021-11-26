@@ -188,7 +188,7 @@
     <section id="contacto" class="contacto">
     <div class=texto-contacto <?php if ($hidemydiv!==True){?>style="display:none"<?php } ?>>
             <h2>¡Mensaje enviado!</h2>
-            <p>Gracias por ponerte en contacto con nosotros. Te responderemos a la brevedad.</p>
+            <p>Gracias por ponerte en contacto con nosotros, te responderemos a la brevedad.</p>
     </div>
     </section>
     <section id="contacto" class="contacto" <?php if ($hidemydiv===True){?>style="display:none"<?php } ?>>

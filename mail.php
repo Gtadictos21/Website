@@ -7,9 +7,14 @@
     require '/var/www/html/vendor/phpmailer/phpmailer/src/PHPMailer.php';
     require '/var/www/html/vendor/phpmailer/phpmailer/src/SMTP.php';
 
-    // Contraseña 
-    $fh = fopen('/path/to/password.txt','r');
-    while ($password = fgets($fh)) {
+    // Secretos
+
+    $json = file_get_contents('/var/www/config.json');
+    $decode = json_decode($json);
+    $SMTP_server = $decode->SMTP;
+    $email_address = $decode->email;
+    $password = $decode->password;
+
 
     // Seteo de hora
 
@@ -36,19 +41,19 @@
     if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $message = $_POST['message'];
+    $message = $_POST['comment'];
     $mailto = '<a href="mailto:'.$email.'">'.$email.'</a>';
 
     try{
         $mail->isSMTP();
-        $mail->Host = ''; // SMTP server
+        $mail->Host = $SMTP_server; // SMTP server
         $mail->SMTPAuth = true;
-        $mail->Username = ''; // Mail desde el que se mandarán los correos
+        $mail->Username = $email_address; // Mail desde el que se mandarán los correos
         $mail->Password = $password; // Contraseña
         $mail->SMTPSecure = 'ssl';
         $mail->Port = '465'; // Puerto SMTP
-        $mail->setFrom(''); // Dirección mail utilizada en el servidor SMTP
-        $mail->addAddress(''); // Dirección mail que recibirá los correos (Puede ser la misma que la dirección utilizada para enviarlos)
+        $mail->setFrom($email_address); // Dirección mail utilizada en el servidor SMTP
+        $mail->addAddress($email_address); // Dirección mail que recibirá los correos (Puede ser la misma que la dirección utilizada para enviarlos)
         $mail->isHTML(true);
         $mail->Subject = 'Mensaje recibido (Formulario de contacto)'; // Asunto del mail
         $mail->Body = "<h4>Nombre: $name <br>Email: $mailto <br>IP: $IP ($PAIS) <br>Hora: $date <br><br>Mensaje:</h4><p>$message</p>"; // Cuerpo
@@ -59,9 +64,4 @@
         $hidemydiv = False;
     }
     }
-    }
-    fclose($fh);
 ?>
-
-
-
