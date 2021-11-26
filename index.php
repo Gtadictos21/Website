@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="http://gtadictos21.com"/>
-    <link rel="shortcut icon" type="image/jpg" href="assets/img/favicon.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico"/>
 
     <meta content="Gtadictos21" property="og:title">
     <meta content="Hola! soy Julián, un creador de contenido bajo el seudónimo de Gtadictos21. Te invito a ingresar en la web, y enterarte un poco mas sobre mi contenido y los medios para contactarnos." property="og:description">
     <meta content="https://Gtadictos21.com/" property="og:url">
-    <meta content="https://Gtadictos21.com/assets/img/Logo.png" property="og:image">
+    <meta content="https://Gtadictos21.com/images/Logo_blanco.png" property="og:image">
     <meta content="#A72C2C" data-react-helmet="true" name="theme-color">
     <meta name="description" content="Hola! soy Julián, un creador de contenido bajo el seudónimo de Gtadictos21. Te invito a ingresar en la web, y enterarte un poco mas sobre mi contenido y los medios para contactarnos.">
     <meta name="keywords" content="gtadictos21, gtadictos 21, csgo, cs:go, contact gtadictos21, contactar gtadictos21, gtadictos21 youtube">
