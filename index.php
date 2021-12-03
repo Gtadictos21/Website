@@ -181,7 +181,7 @@
             <p>Actualmente utilizo una CFG creada por mí mismo, que tiene las mejores configuraciones gráficas, bindeos y demás. ¡Puedes descargar la CFG para 64 ticks o 128 ticks desde este <a id="twitter" href="https://gtadictos21.com/descargas/cfg.zip">link</a>!</p>
             <p>Juego a 1920x1080 (16:9), con las configuraciones gráficas en medio, ya que es un buen balance entre una buena calidad gráfica y muchos FPS, y como digo en muchos de mis videos, ambas cosas son importantes en el CS:GO.</p>
             <p>La interfaz, el fov, y otros ajustes que utilizo son los default, ya que me acostumbré a esos, y no necesito modificarlos.</p>
-            <p>El código de mi mira es: <span class="csgo">CSGO-Ojchi-tneGY-Janya-CGGKU-mCPEL</span></p>
+            <p>El código de mi mira es: <span class="csgo">CSGO-Ojchi-tneGY-Janya-CGGKU-mCPEL</span> (Haz click para copiar el codigo)</p>
         </article>
     </section>
     <div id="breakline"></div>
