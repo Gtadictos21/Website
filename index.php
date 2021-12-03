@@ -219,5 +219,6 @@
 
     <!-- JS -->
     <script src="styles/dropdown.js"></script>
+    <script src="styles/copypaste.js"></script>
 </body>
 </html>
