@@ -194,7 +194,7 @@
     <section id="contacto" class="contacto" <?php if ($hidemydiv===True){?>style="display:none"<?php } ?>>
         <div class=texto-contacto>
             <h2>¡Contáctame!</h2>
-            <p>Si deseas utilizar un medio distinto al correo electrónico para ponerte en contacto, puedes utilizar este siguiente formulario para enviarme un mensaje.</p>
+            <p>Si deseas utilizar un medio distinto al correo electrónico para ponerte en contacto, puedes utilizar el siguiente formulario para enviarme un mensaje.</p>
         </div>
         <form class="formulario-contacto" action="" method="post">
             <input class="form-input box" type="text" name="name" aria-placeholder="John Smith" autocomplete="off" placeholder="John Smith" required>    
